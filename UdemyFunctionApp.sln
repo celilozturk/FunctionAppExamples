@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionApp1", "FunctionApp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{85362A1B-C7C9-45E1-BF95-51CE643EBCE1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BindingFuncApp", "BindingFuncApp\BindingFuncApp.csproj", "{CAC40561-6DA8-4C7F-96B5-20179530FB20}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{85362A1B-C7C9-45E1-BF95-51CE643EBCE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85362A1B-C7C9-45E1-BF95-51CE643EBCE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85362A1B-C7C9-45E1-BF95-51CE643EBCE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAC40561-6DA8-4C7F-96B5-20179530FB20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAC40561-6DA8-4C7F-96B5-20179530FB20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAC40561-6DA8-4C7F-96B5-20179530FB20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAC40561-6DA8-4C7F-96B5-20179530FB20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
