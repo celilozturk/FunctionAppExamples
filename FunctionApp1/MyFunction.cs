@@ -14,14 +14,9 @@ namespace FunctionApp1
     {
         [FunctionName("MyFunction")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Admin, "get", "post", Route = null)] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
         {
-
-
-
-            string myAPI = Environment.GetEnvironmentVariable("MyAPI");
-            log.LogInformation($"My Api keys: {myAPI}");
             log.LogInformation("C# HTTP trigger function processed a request.");
 
             string name = req.Query["name"];
