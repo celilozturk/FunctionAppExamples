@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations.Schema;
 using TableAttribute = Microsoft.Azure.WebJobs.TableAttribute;
 using Microsoft.Azure.Cosmos.Table;
+using Microsoft.Azure.Storage.Queue;
 
 namespace BindingFuncApp
 {
@@ -18,7 +19,7 @@ namespace BindingFuncApp
         [FunctionName("MyHttpTrigger")]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
-            ILogger log, [Table("Products",Connection="MyAzureStorage")] CloudTable cloudTable) //Output Binding islemi
+            ILogger log, [Table("Products",Connection="MyAzureStorage")] CloudTable cloudTable, [Queue("queueproduct",Connection ="MyAzureStorage")] CloudQueue cloudQueue) //Output Binding islemi
         {
            
 
@@ -28,6 +29,10 @@ namespace BindingFuncApp
             TableOperation operation = TableOperation.Insert(newProduct);
 
             await cloudTable.ExecuteAsync(operation);
+
+            var productString=JsonConvert.SerializeObject(newProduct);  
+            CloudQueueMessage cloudQueueMessage = new CloudQueueMessage(productString);
+            await cloudQueue.AddMessageAsync(cloudQueueMessage);
                
 
             return new OkObjectResult(newProduct);
