@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using EFCoreFunctionApp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace EFCoreFunctionApp
 {
@@ -15,30 +16,24 @@ namespace EFCoreFunctionApp
     {
 
         private readonly AppDbContext _appDbContext;
+        private const string Route = "Products";
 
         public ProductFunction(AppDbContext appDbContext)
         {
             _appDbContext = appDbContext;
         }
 
-        [FunctionName("Function1")]
-        public  async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
+        [FunctionName("GetProducts")]
+        public  async Task<IActionResult> GetProducts(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = Route)] HttpRequest req,
             ILogger log)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
+            log.LogInformation("Tum urunleri getir!");
 
-            string name = req.Query["name"];
-
-            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            dynamic data = JsonConvert.DeserializeObject(requestBody);
-            name = name ?? data?.name;
-
-            string responseMessage = string.IsNullOrEmpty(name)
-                ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
-                : $"Hello, {name}. This HTTP triggered function executed successfully.";
-
-            return new OkObjectResult(responseMessage);
+            var products = await _appDbContext.Products.ToListAsync();
+            
+            return new OkObjectResult(products);
+            
         }
     }
 }
