@@ -64,5 +64,18 @@ namespace EFCoreFunctionApp
             return new NoContentResult();
 
         }
+        [FunctionName("DeleteProducts")]
+        public async Task<IActionResult> DeleteProducts(
+           [HttpTrigger(AuthorizationLevel.Anonymous, "delete", Route = Route +"/{id}")] HttpRequest req,
+           ILogger log, int id)
+        {
+            log.LogInformation("Urun sil");
+            var product = await _appDbContext.Products.FindAsync(id);
+
+            _appDbContext.Products.Remove(product);
+            await _appDbContext.SaveChangesAsync();
+            return new NoContentResult();
+
+        }
     }
 }
