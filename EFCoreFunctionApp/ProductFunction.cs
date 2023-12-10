@@ -35,5 +35,20 @@ namespace EFCoreFunctionApp
             return new OkObjectResult(products);
             
         }
+
+        [FunctionName("SaveProducts")]
+        public async Task<IActionResult> SaveProducts(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = Route)] HttpRequest req,
+            ILogger log)
+        {
+            log.LogInformation("Yeni urun ekle");
+
+           string body=await new StreamReader(req.Body).ReadToEndAsync();
+            var newProduct =JsonConvert.DeserializeObject<Product>(body);
+            _appDbContext.Products.Add(newProduct);
+            await _appDbContext.SaveChangesAsync();
+            return new OkObjectResult(newProduct); 
+
+        }
     }
 }
