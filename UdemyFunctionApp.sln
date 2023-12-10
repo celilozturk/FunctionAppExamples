@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCoreFunctionApp", "EFCore
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionPublishApp", "FunctionPublishApp\FunctionPublishApp.csproj", "{F1626509-9C45-4226-A46B-96E00C1A737A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionTimerTriggerApp", "FunctionTimerTriggerApp\FunctionTimerTriggerApp.csproj", "{94DA5010-68A0-4B3E-8D21-14E8928F742A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F1626509-9C45-4226-A46B-96E00C1A737A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1626509-9C45-4226-A46B-96E00C1A737A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1626509-9C45-4226-A46B-96E00C1A737A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94DA5010-68A0-4B3E-8D21-14E8928F742A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94DA5010-68A0-4B3E-8D21-14E8928F742A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94DA5010-68A0-4B3E-8D21-14E8928F742A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94DA5010-68A0-4B3E-8D21-14E8928F742A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
