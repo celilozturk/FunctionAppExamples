@@ -10,22 +10,17 @@ using Newtonsoft.Json;
 
 namespace FunctionPublishApp
 {
-    public static class Function1
+    public static class Function2
     {
-        [FunctionName("Function1")]
+        [FunctionName("Function2")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
-
-            log.LogInformation($"Veri 1 Key:{Environment.GetEnvironmentVariable("Veri1")}");
-            log.LogInformation($"Veri 2 Key:{Environment.GetEnvironmentVariable("Veri2")}");
+            throw new Exception("Veri tabanina baglanti sirasinda bir hata meydana geldi");
+            log.LogInformation("Function2 calisti !");
 
             string name = req.Query["name"];
-
-            int sayi = 0;
-            var sonuc = 15 / sayi;
 
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             dynamic data = JsonConvert.DeserializeObject(requestBody);
