@@ -11,7 +11,7 @@ using SixLabors.ImageSharp.Processing;
 
 namespace FunctionBlobTriggerApp
 {
-    public class ResizeFunction
+    public  class ResizeFunction
     {
         [FunctionName("ResizeFunction")]
         public async Task Run([BlobTrigger("udemy-pictures/{name}", Connection = "MyAzureStorage")]Stream myBlob, string name, ILogger log, [Blob("udemy-pictures-resize",Connection ="MyAzureStorage")] CloudBlobContainer cloudBlobContainer)
@@ -32,7 +32,7 @@ namespace FunctionBlobTriggerApp
             ResizeImage.Save(ms, format);
 
             ms.Position = 0;
-            blockBlob.UploadFromStreamAsync(ms);
+           await blockBlob.UploadFromStreamAsync(ms);
             ms.Close();
             ms.Dispose();
 
