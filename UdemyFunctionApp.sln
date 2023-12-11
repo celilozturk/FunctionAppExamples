@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BindingFuncApp", "BindingFu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCoreFunctionApp", "EFCoreFunctionApp\EFCoreFunctionApp.csproj", "{AA66B15E-1E8B-4F28-9086-18E7317D24F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionPublishApp", "FunctionPublishApp\FunctionPublishApp.csproj", "{F1626509-9C45-4226-A46B-96E00C1A737A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunctionPublishApp", "FunctionPublishApp\FunctionPublishApp.csproj", "{F1626509-9C45-4226-A46B-96E00C1A737A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionTimerTriggerApp", "FunctionTimerTriggerApp\FunctionTimerTriggerApp.csproj", "{94DA5010-68A0-4B3E-8D21-14E8928F742A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunctionTimerTriggerApp", "FunctionTimerTriggerApp\FunctionTimerTriggerApp.csproj", "{94DA5010-68A0-4B3E-8D21-14E8928F742A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionBlobTriggerApp", "FunctionBlobTriggerApp\FunctionBlobTriggerApp.csproj", "{F6615E70-7685-4228-95F4-1B0D4C01A967}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{94DA5010-68A0-4B3E-8D21-14E8928F742A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94DA5010-68A0-4B3E-8D21-14E8928F742A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94DA5010-68A0-4B3E-8D21-14E8928F742A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6615E70-7685-4228-95F4-1B0D4C01A967}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6615E70-7685-4228-95F4-1B0D4C01A967}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6615E70-7685-4228-95F4-1B0D4C01A967}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6615E70-7685-4228-95F4-1B0D4C01A967}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

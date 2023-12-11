@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "FunctionBlobTriggerApp": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7264",
+      "launchBrowser": false
+    }
+  }
+}
